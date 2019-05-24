@@ -5,3 +5,9 @@ Given a sorted array of distinct elements, return a fixed point, if one exists. 
 
 For example, given [-6, 0, 2, 40], you should return 2. Given [1, 5, 7, 8], you should return False.
 """
+
+def solution(array):
+  for _ in array:
+    if _ == array[_]:
+      return array[_]
+  return False
