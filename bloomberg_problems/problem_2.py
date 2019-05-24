@@ -11,3 +11,20 @@ For example, if N = 5 and k = 2, the order of executions would be [2, 4, 1, 5, 3
 
 Bonus: Find an O(log N) solution if k = 2.
 """
+
+def prisonercircle(N, k):
+    prisonerlist = list()
+    overN = 1
+    kth = 0
+    for _ in range(0, N * k):
+      if kth == 0:
+        if k + _ <= N:
+          prisonerlist.append(k + _)
+        else:
+          prisonerlist.append(overN)
+          overN += 1
+        kth += 1
+      else:
+        if kth  + 1 == k:
+          kth = 0
+    return prisonerlist[len(prisonerlist) - 1]
